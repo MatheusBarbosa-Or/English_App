@@ -1,10 +1,10 @@
-import {Text, View, TouchableOpacity, TextInput, Alert, useColorScheme, Animated, Easing, Image} from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context"
+import {Text, View, TouchableOpacity, TextInput, Alert, useColorScheme, Image, ScrollView} from "react-native";
+import {SafeAreaView} from "react-native-safe-area-context"
 import {darkColors, lightColors, makeStyles} from "@/src/app/mainPageStudent/style";
 import {router} from "expo-router";
 import {useState, useEffect, useMemo, useRef} from "react";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import {MaterialCommunityIcons} from "@expo/vector-icons";
+import {Ionicons, MaterialCommunityIcons} from "@expo/vector-icons";
 
 export default function MainPageStudent() {
 
@@ -12,10 +12,9 @@ export default function MainPageStudent() {
     const colors = scheme === "dark" ? darkColors : lightColors;
     const styles = makeStyles(colors);
 
-
     return(
         <SafeAreaView style={styles.screen} edges={["top"]}>
-            <View style={styles.container}>
+            <ScrollView style={styles.container} contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
                 <View style={styles.topAppBar}>
                     <View style={styles.avatarWrap}>
                         <View style={styles.avatarImg}>
@@ -57,12 +56,126 @@ export default function MainPageStudent() {
 
                 <View style={styles.nextCardWrap}>
                     <View style={styles.nextCard}>
-                        <View style={styles.nextHero}>
-                            <Image source={require("@/src/assets/images/teacher.png")}></Image>
+                        <Image source={require("@/src/assets/images/Teacher.png")} style={styles.nextHero}/>
+
+                        <View style={styles.nextBody}>
+                            <Text style={styles.teacherName}>Ms. Ana Clara</Text>
+                            <Text style={styles.className}>Basic Conversation Skills</Text>
+
+                            <View style={styles.divider}/>
+
+                            <View style={styles.nextFooterRow}>
+                                <View style={styles.metaCol}>
+                                    <View style={styles.metaRow}>
+                                        <MaterialCommunityIcons name={"calendar"} style={styles.metaText}/>
+                                        <Text style={styles.metaText}>Today at 10:00 AM</Text>
+                                    </View>
+
+                                    <View style={styles.metaRow}>
+                                        <MaterialCommunityIcons name={"clock"} style={styles.metaWarnText}/>
+                                        <Text style={styles.metaWarnText}>Starts in 5:00</Text>
+                                    </View>
+                                </View>
+
+                                <TouchableOpacity style={styles.joinBtn}>
+                                    <Text style={styles.joinBtnText}>Join Now</Text>
+                                </TouchableOpacity>
+                            </View>
                         </View>
                     </View>
                 </View>
 
+                <View style={styles.timerRow}>
+                    <View style={styles.timerCol}>
+                        <View style={styles.timerBoxActive}>
+                            <Text style={styles.timerValueActive}>15</Text>
+                        </View>
+                        <View style={styles.timerLabelWrap}>
+                            <Text style={styles.timerLabel}>Minutes</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.timerCol}>
+                        <View style={styles.timerBox}>
+                            <Text style={styles.timerValue}>00</Text>
+                        </View>
+                        <View style={styles.timerLabelWrap}>
+                            <Text style={styles.timerLabel}>Seconds</Text>
+                        </View>
+                    </View>
+                </View>
+
+                <View style={styles.recentHeaderRow}>
+                    <Text style={styles.recentHeaderText}>Recent Lessons</Text>
+                    <TouchableOpacity>
+                        <Text style={styles.viewAllBtnText}>View All</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <ScrollView horizontal={true}>
+                    <View style={styles.carouselContent}>
+                        <TouchableOpacity style={styles.lessonCard}>
+                            <Image source={require("@/src/assets/images/Lesson.png")} style={styles.lessonThumb}/>
+                            <Text style={styles.lessonTitle}>Basic Grammar</Text>
+                            <Text style={styles.lessonSubtitle}>Unit 1: Objects</Text>
+
+                            <View style={styles.lessonProgressRow}>
+                                <View style={styles.lessonTrack}>
+                                    <View style={styles.lessonFillGreen}/>
+                                </View>
+                                <Text style={styles.lessonPctGreen}>100%</Text>
+                            </View>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.lessonCard}>
+                            <Image source={require("@/src/assets/images/Lesson2.png")} style={styles.lessonThumb}/>
+                            <Text style={styles.lessonTitle}>Basic Grammar</Text>
+                            <Text style={styles.lessonSubtitle}>Unit 2: Speaking</Text>
+
+                            <View style={styles.lessonProgressRow}>
+                                <View style={styles.lessonTrack}>
+                                    <View style={styles.lessonFillGreen}/>
+                                </View>
+                                <Text style={styles.lessonPctGreen}>100%</Text>
+                            </View>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.lessonCard}>
+                            <Image source={require("@/src/assets/images/Lesson3.png")} style={styles.lessonThumb}/>
+                            <Text style={styles.lessonTitle}>Basic Grammar</Text>
+                            <Text style={styles.lessonSubtitle}>Unit 3: Conversation</Text>
+
+                            <View style={styles.lessonProgressRow}>
+                                <View style={styles.lessonTrack}>
+                                    <View style={styles.lessonFillGreen}/>
+                                </View>
+                                <Text style={styles.lessonPctGreen}>100%</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                </ScrollView>
+            </ScrollView>
+
+            <View style={styles.bottomNav}>
+                <TouchableOpacity>
+                    <MaterialCommunityIcons name={"home"} style={styles.navItemActive} size={24}/>
+                    <Text style={styles.navLabelActive}>Home</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                    <MaterialCommunityIcons name={"book"} style={styles.navItem} size={24}/>
+                    <Text style={styles.navLabel}>Lessons</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                    <MaterialCommunityIcons name={"book-open-blank-variant"} style={styles.navItem} size={24}/>
+                    <Text style={styles.navLabel}>Library</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                    <Ionicons name={"person"} style={styles.navItem} size={24}/>
+                    <Text style={styles.navLabel}>Profile</Text>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     );

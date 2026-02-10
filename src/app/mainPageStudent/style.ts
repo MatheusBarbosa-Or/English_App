@@ -1,4 +1,5 @@
 import { Platform, StyleSheet } from "react-native";
+import {useSafeAreaInsets} from "react-native-safe-area-context"
 
 export type ThemeColors = {
     primary: string;
@@ -367,6 +368,12 @@ export const makeStyles = (c: ThemeColors) =>
             paddingTop: 24,
             paddingBottom: 4,
         },
+        recentHeaderText: {
+            fontSize: 20, // text-[20px]
+            fontWeight: "700",
+            color: c.text,
+            letterSpacing: -0.2,
+        },
         viewAllBtnText: {
             fontSize: 14,
             fontWeight: "700",
@@ -375,12 +382,12 @@ export const makeStyles = (c: ThemeColors) =>
 
         // ===== Carousel =====
         carousel: {
-            // ScrollView horizontal
         },
         carouselContent: {
             paddingHorizontal: 16,
             paddingVertical: 16,
             gap: 16, // se não tiver gap, use marginRight nos cards
+            flexDirection: "row",
         },
         lessonCard: {
             width: 200, // min-w-[200px]
@@ -470,15 +477,29 @@ export const makeStyles = (c: ThemeColors) =>
         navItem: {
             alignItems: "center",
             justifyContent: "center",
+            alignSelf: "center",
+            color: c.muted,
+        },
+        navItemActive: {
+            alignItems: "center",
+            justifyContent: "center",
+            alignSelf: "center",
+            color: c.primary,
         },
         navLabel: {
             marginTop: 4,
             fontSize: 10,
             fontWeight: "500",
             color: c.muted,
+            alignItems: "center",
+            justifyContent: "center",
+            alignSelf: "center",
         },
         navLabelActive: {
             fontWeight: "700",
             color: c.primary,
+            alignItems: "center",
+            justifyContent: "center",
+            alignSelf: "center",
         },
     });
