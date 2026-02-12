@@ -12,6 +12,10 @@ export default function MainPageStudent() {
     const colors = scheme === "dark" ? darkColors : lightColors;
     const styles = makeStyles(colors);
 
+    const handleNavigate = ()=>{
+        router.push({pathname: "/mainLessonPage"});
+    }
+
     return(
         <SafeAreaView style={styles.screen} edges={["top"]}>
             <ScrollView style={styles.container} contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
@@ -115,7 +119,7 @@ export default function MainPageStudent() {
 
                 <ScrollView horizontal={true}>
                     <View style={styles.carouselContent}>
-                        <TouchableOpacity style={styles.lessonCard}>
+                        <TouchableOpacity style={styles.lessonCard} onPress={handleNavigate}>
                             <Image source={require("@/src/assets/images/Lesson.png")} style={styles.lessonThumb}/>
                             <Text style={styles.lessonTitle}>Basic Grammar</Text>
                             <Text style={styles.lessonSubtitle}>Unit 1: Objects</Text>

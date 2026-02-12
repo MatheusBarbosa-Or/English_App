@@ -15,13 +15,13 @@ export default function MainLessonPage(){
         <SafeAreaView style={styles.screen} edges={["top"]}>
             <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
                 <View style={styles.header}>
-                    <TouchableOpacity style={styles.headerIconWrap}>
-                        <Ionicons name={"chevron-back"} color={colors.text} size={24}></Ionicons>
+                    <TouchableOpacity style={styles.headerIconWrap} onPress={() => router.back()}>
+                        <Ionicons name={"chevron-back"} color={colors.text} size={24}/>
                     </TouchableOpacity>
                     <Text style={styles.headerTitle}> Present Perfect Lesson </Text>
 
                     <TouchableOpacity style={styles.headerIconEnd}>
-                        <Feather name={"more-horizontal"} color={colors.text} size={24}></Feather>
+                        <Feather name={"more-horizontal"} color={colors.text} size={24}/>
                     </TouchableOpacity>
                 </View>
 
@@ -29,7 +29,7 @@ export default function MainLessonPage(){
                     <View style={styles.videoCard}>
                         <Image source={require("@/src/assets/images/Lesson5.png")} style={styles.videoImage}/>
                         <TouchableOpacity style={styles.playButton}>
-                            <Ionicons name={"play-sharp"} color={colors.text} size={24}/>
+                            <Ionicons name={"play-sharp"} color={"#ffff"} size={24}/>
                         </TouchableOpacity>
 
                         <View style={styles.videoOverlayBottom}>
@@ -62,7 +62,7 @@ export default function MainLessonPage(){
                     <View style={styles.pdfCard}>
                         <View style={styles.pdfRow}>
                             <View style={styles.pdfIconBox}>
-                                <MaterialCommunityIcons name={"file-document"} color={colors.text} size={24}></MaterialCommunityIcons>
+                                <MaterialCommunityIcons name={"file-document"} color={"#ffff"} size={24}/>
                             </View>
                             <View style={styles.pdfWrapDirection}>
                                 <Text style={styles.pdfTitle}> Lesson Slides e Exercises </Text>
@@ -71,7 +71,7 @@ export default function MainLessonPage(){
                         </View>
 
                         <TouchableOpacity style={styles.downloadButton}>
-                            <Feather name={"download"}  color={colors.text} size={24}/>
+                            <Feather name={"download"}  color={"#ffff"} size={24}/>
                             <Text style={styles.downloadButtonText}>Download PDF</Text>
                         </TouchableOpacity>
                     </View>
@@ -79,7 +79,7 @@ export default function MainLessonPage(){
 
                 <View style={styles.bottomBar}>
                     <TouchableOpacity style={styles.quizButton}>
-                        <MaterialCommunityIcons name={"help-box-multiple-outline"} color={colors.text} size={24}/>
+                        <MaterialCommunityIcons name={"help-box-multiple-outline"} color={"#ffff"} size={24}/>
                         <Text style={styles.quizButtonText}> Start Lesson Quiz </Text>
                     </TouchableOpacity>
                 </View>
