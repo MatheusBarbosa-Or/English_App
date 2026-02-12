@@ -54,7 +54,7 @@ export default function MainLessonPage(){
                     <Text style={styles.bodyText}>
                         In this lesson, we explore the nuances of the Present Perfect tense, including its use whith
                         ever, never, already, and yet. This recording covers common mistakes, pronunciation tips and
-                        provides real-world examples dor daily conversation.
+                        provides real-world examples for daily conversation.
                     </Text>
                 </View>
 
