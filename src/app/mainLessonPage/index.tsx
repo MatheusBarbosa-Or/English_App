@@ -15,14 +15,14 @@ export default function MainLessonPage(){
         <SafeAreaView style={styles.screen} edges={["top"]}>
             <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
                 <View style={styles.header}>
-                    <View style={styles.headerIconWrap}>
+                    <TouchableOpacity style={styles.headerIconWrap}>
                         <Ionicons name={"chevron-back"} color={colors.text} size={24}></Ionicons>
-                    </View>
+                    </TouchableOpacity>
                     <Text style={styles.headerTitle}> Present Perfect Lesson </Text>
 
-                    <View style={styles.headerIconEnd}>
+                    <TouchableOpacity style={styles.headerIconEnd}>
                         <Feather name={"more-horizontal"} color={colors.text} size={24}></Feather>
-                    </View>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={styles.videoContainer}>

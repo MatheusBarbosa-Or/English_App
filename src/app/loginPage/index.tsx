@@ -24,8 +24,13 @@ export default function LoginPage() {
 
     const handleLogin = () =>{
         if (email !== "" && password !== ""){
-            Alert.alert("Login realizado com sucesso!")
-            router.push({pathname: "/mainPageStudent"})
+            if (role === "student") {
+                router.push({pathname: "/mainPageStudent"})
+                Alert.alert("Login realizado com sucesso!")
+            } else if (role === "teacher") {
+                router.push({pathname: "/mainPageTeacher"})
+                Alert.alert("Login realizado com sucesso!")
+            }
         }else {
             Alert.alert("Dados não preenchidos!")
         }
