@@ -16,11 +16,12 @@ export default function MainPageStudent() {
         <SafeAreaView style={styles.screen} edges={["top"]}>
             <ScrollView style={styles.container} contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
                 <View style={styles.topAppBar}>
-                    <View style={styles.avatarWrap}>
+
+                    <TouchableOpacity style={styles.avatarWrap} onPress={() => router.back()}>
                         <View style={styles.avatarImg}>
                             <MaterialCommunityIcons name={"face-woman-profile"} color={colors.text} size={24}/>
                         </View>
-                    </View>
+                    </TouchableOpacity>
 
                     <View style={styles.greetingWrap}>
                         <Text style={styles.welcomeSmall}>Welcome back!</Text>

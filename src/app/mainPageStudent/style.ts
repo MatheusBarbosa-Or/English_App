@@ -110,7 +110,6 @@ export const makeStyles = (c: ThemeColors) =>
             paddingBottom: 8, // pb-2
             backgroundColor: c.bg,
         },
-
         avatarWrap: {
             width: 40, // size-10
             height: 40,
