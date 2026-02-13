@@ -11,6 +11,10 @@ export default function LessonPage(){
     const colors = scheme === "dark" ? darkColors : lightColors;
     const styles = makeStyles(colors);
 
+    const handleNavigate = ()=>{
+        router.push({pathname: "/quizPage"});
+    }
+
     return (
         <SafeAreaView style={styles.screen} edges={["top"]}>
             <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
@@ -78,7 +82,7 @@ export default function LessonPage(){
                 </View>
 
                 <View style={styles.bottomBar}>
-                    <TouchableOpacity style={styles.quizButton}>
+                    <TouchableOpacity style={styles.quizButton} onPress={handleNavigate}>
                         <MaterialCommunityIcons name={"help-box-multiple-outline"} color={"#ffff"} size={24}/>
                         <Text style={styles.quizButtonText}> Start Lesson Quiz </Text>
                     </TouchableOpacity>
