@@ -2,7 +2,7 @@ import {Text, View, TouchableOpacity, TextInput, Alert, useColorScheme, Image, S
 import {SafeAreaView} from "react-native-safe-area-context"
 import {darkColors, lightColors, makeStyles} from "@/src/app/mainPageTeacher/style";
 import {router} from "expo-router";
-import {useState, useEffect, useMemo, useRef} from "react";
+import {useState, useEffect, useMemo, useRef, useCallback} from "react";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import {Ionicons, MaterialCommunityIcons} from "@expo/vector-icons";
 
@@ -12,9 +12,9 @@ export default function MainPageTeacher() {
     const colors = scheme === "dark" ? darkColors : lightColors;
     const styles = makeStyles(colors);
 
-    /*<TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-        <MaterialIcons name="arrow-back-ios-new"  size={24} color= {colors.text} />
-    </TouchableOpacity>*/
+    const handleNavigation  = () =>{
+        router.push({pathname: "/calendarPage"})
+    }
 
     return (
         <SafeAreaView style={styles.screen} edges={["top"]}>
@@ -65,7 +65,7 @@ export default function MainPageTeacher() {
 
                 <View style={styles.sectionHeaderRow}>
                     <Text style={styles.sectionTitle}>Today's Schedule</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={handleNavigation}>
                         <Text style={styles.sectionAction}>View Calendar</Text>
                     </TouchableOpacity>
                 </View>

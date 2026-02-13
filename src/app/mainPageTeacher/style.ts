@@ -359,6 +359,7 @@ export const makeStyles = (c: ThemeColors) =>
             justifyContent: "space-around",
             alignItems: "center",
             paddingTop: 10,
+            paddingBottom: 22,
             backgroundColor: c.surface,
             borderTopWidth: 1,
             borderTopColor: c.border,

@@ -1,8 +1,8 @@
-import MainPage from "@/src/app/mainPage";
+import LoginPage from "@/src/app/loginPage";
 
 export default function Index() {
     return (
-        <MainPage/>
+        <LoginPage/>
   );
 }
 

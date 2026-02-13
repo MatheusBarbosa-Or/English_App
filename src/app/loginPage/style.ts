@@ -48,27 +48,17 @@ export const makeStyles = (c: ThemeColors) =>
 
         // Top App Bar
         appBar: {
-            paddingHorizontal: 16,
             paddingVertical: 16,
             flexDirection: "row",
             alignItems: "center",
-            justifyContent: "space-between",
             backgroundColor: c.bg, // se quiser "blur", dá pra trocar por BlurView
-        },
-        backBtn: {
-            width: 40,
-            height: 40,
-            borderRadius: 999,
-            alignItems: "center",
-            justifyContent: "center",
         },
         appBarTitle: {
             flex: 1,
             textAlign: "center",
             fontSize: 18,
             fontWeight: "700",
-            color: c.text,
-            paddingRight: 40, // pra compensar o botão de voltar e manter centralizado
+            color: c.text, // pra compensar o botão de voltar e manter centralizado
         },
 
         // Background motifs (opcional)

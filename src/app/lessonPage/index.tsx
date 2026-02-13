@@ -1,12 +1,12 @@
 import {Text, View, TouchableOpacity, TextInput, Alert, useColorScheme, Image, ScrollView} from "react-native";
 import {SafeAreaView} from "react-native-safe-area-context"
-import {darkColors, lightColors, makeStyles} from "@/src/app/mainLessonPage/style";
+import {darkColors, lightColors, makeStyles} from "@/src/app/lessonPage/style";
 import {router} from "expo-router";
 import {useState, useEffect, useMemo, useRef} from "react";
 import {Ionicons, MaterialCommunityIcons} from "@expo/vector-icons";
 import Feather from '@expo/vector-icons/Feather';
 
-export default function MainLessonPage(){
+export default function LessonPage(){
     const scheme = useColorScheme();
     const colors = scheme === "dark" ? darkColors : lightColors;
     const styles = makeStyles(colors);

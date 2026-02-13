@@ -49,10 +49,6 @@ export default function LoginPage() {
                 </View>
 
                 <View style= {styles.appBar}>
-                    <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-                        <MaterialIcons name="arrow-back-ios-new"  size={24} color= {colors.text} />
-                    </TouchableOpacity>
-
                     <Text style= {styles.appBarTitle}>Sign In</Text>
                 </View>
 

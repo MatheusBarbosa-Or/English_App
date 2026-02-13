@@ -13,7 +13,7 @@ export default function MainPageStudent() {
     const styles = makeStyles(colors);
 
     const handleNavigate = ()=>{
-        router.push({pathname: "/mainLessonPage"});
+        router.push({pathname: "/lessonPage"});
     }
 
     return(
@@ -162,23 +162,23 @@ export default function MainPageStudent() {
             </ScrollView>
 
             <View style={styles.bottomNav}>
-                <TouchableOpacity>
-                    <MaterialCommunityIcons name={"home"} style={styles.navItemActive} size={24}/>
+                <TouchableOpacity style={styles.navItem}>
+                    <MaterialCommunityIcons name={"home"} size={24} color={colors.primary} />
                     <Text style={styles.navLabelActive}>Home</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity>
-                    <MaterialCommunityIcons name={"book"} style={styles.navItem} size={24}/>
+                <TouchableOpacity  style={styles.navItem}>
+                    <MaterialCommunityIcons name={"book"} size={24} color={colors.muted}/>
                     <Text style={styles.navLabel}>Lessons</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity>
-                    <MaterialCommunityIcons name={"book-open-blank-variant"} style={styles.navItem} size={24}/>
+                <TouchableOpacity style={styles.navItem}>
+                    <MaterialCommunityIcons name={"book-open-blank-variant"} size={24} color={colors.muted}/>
                     <Text style={styles.navLabel}>Library</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity>
-                    <Ionicons name={"person"} style={styles.navItem} size={24}/>
+                <TouchableOpacity style={styles.navItem}>
+                    <Ionicons name={"person"}  size={24} color={colors.muted}/>
                     <Text style={styles.navLabel}>Profile</Text>
                 </TouchableOpacity>
             </View>
